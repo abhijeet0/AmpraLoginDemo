@@ -6,15 +6,25 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "devextreme": "20.1.4",
+    "devextreme-react": "20.1.4",
+    "grommet": "^2.13.0",
+    "polished": "^3.6.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-intl-universal": "^2.2.5",
+    "react-scripts": "3.4.1",
+    "react-toastify": "^6.0.5",
+    "typescript": "^3.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate": "plop",
+    "storybook": "start-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +40,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-info": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/preset-create-react-app": "^3.0.0",
+    "@storybook/react": "^5.3.19",
+    "@svgr/webpack": "^5.4.0",
+    "devextreme-themebuilder": "20.1-stable",
+    "dotenv": "^8.2.0",
+    "http-proxy-middleware": "^1.0.4",
+    "jest": "^26.0.1",
+    "jest-junit": "^10.0.0",
+    "npm-check-updates": "^6.0.1",
+    "plop": "^2.7.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-test-renderer": "^16.13.1",
+    "styled-components": "^5.1.1"
   }
 }

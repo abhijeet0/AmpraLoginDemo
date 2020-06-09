@@ -10,10 +10,12 @@
     "devextreme": "20.1.4",
     "devextreme-react": "20.1.4",
     "grommet": "^2.13.0",
+    "grommet-icons": "^4.4.0",
     "polished": "^3.6.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intl-universal": "^2.2.5",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-toastify": "^6.0.5",
     "typescript": "^3.9.5"

@@ -1,9 +1,11 @@
 /* PLOP_INJECT_IMPORT */
-import TextArea from './TextArea';
-import Button from './Button';
+import TextBox from './TextBox';
+import DevextremeTextArea from './DevextremeTextArea';
+import DevextremeButton from './DevextremeButton';
 
 export {
   /* PLOP_INJECT_EXPORT */
-	TextArea,
-	Button,
+	TextBox,
+  DevextremeTextArea,
+  DevextremeButton,
 }

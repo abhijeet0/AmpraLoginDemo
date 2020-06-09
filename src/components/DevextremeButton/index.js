@@ -1,3 +1,3 @@
-import Button from './Button';
+import DevextremeButton from './DevextremeButton';
 
-export default Button;
+export default DevextremeButton;

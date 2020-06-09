@@ -1,3 +1,3 @@
-import TextArea from './TextArea';
+import DevextremeTextArea from './DevextremeTextArea';
 
-export default TextArea;
+export default DevextremeTextArea;

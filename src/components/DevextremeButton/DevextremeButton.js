@@ -7,19 +7,19 @@ import 'devextreme/dist/css/dx.light.css';
 
 import Button from 'devextreme-react/button';
 
+
 const DevextremeButton = props => {
-  onClick = (e) => {
-    const buttonText = e.component.option('text');
-    notify(`The ${capitalize(buttonText)} button was clicked`);
-  }
+ 
   return (
     <div className={styles.root}>
       <Button
+                  id={"#myButton3"}
+                  {...props}
                   width={120}
                   text={props.text}
                   type="default"
                   stylingMode="contained"
-                  onClick={this.onClick}
+                  onClick={props.onClick}
                 />
     </div>
   );

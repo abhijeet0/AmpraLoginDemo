@@ -1,74 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./Login.module.css";
-import { Button } from "./../../components/DevextremeButton";
+import Button from "./../../components/DevextremeButton";
+import TextBox from "./../../components/DevextremeTextBox";
+import { Box, Grommet, Heading, FormField } from "grommet";
+import users from "./../../user.json";
+import { withRouter } from "react-router-dom";
 
-const myTheme = {
-  global: {
-    colors: {
-      brand: "#2196f3",
-    },
-    elevation: {
-      light: {
-        xsmall: "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
-        small: "0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)",
-        medium: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
-        large: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
-        xlarge: "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)",
-      },
-    },
-    font: {
-      family: "'Roboto', Arial, sans-serif",
-      size: "14px",
-    },
-    input: {
-      weight: 500,
-    },
-  },
-  button: {
-    border: {
-      radius: 0,
-    },
-    padding: {
-      vertical: "6px",
-      horizontal: "24px",
-    },
-    extend: (props) => `
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 14px;
-
-      ${props && props.primary && "color: white;"}
-    `,
-  },
-  formField: {
-    border: {
-      position: "outer",
-      side: "all",
-    },
-    label: {
-      weight: 600,
-      size: "small",
-      color: "dark-4",
-    },
-  },
-  heading: {
-    font: {
-      family: "'Roboto', Arial, sans-serif",
-    },
-  },
-  select: {
-    icons: {
-      down: Icons.CaretDown,
-      color: "dark-5",
-    },
-  },
+const GetUser = (uname, pass, history) => {
+  users.map((value, index) => {
+    if (value.username === uname.value && value.password === pass.value) {
+      console.log("login success");
+      history.push("/home");
+    }
+  });
 };
-
 const Header = () => (
   <Box
     tag="header"
-    background="brand"
+    background="#075999"
     pad="small"
     elevation="small"
     justify="between"
@@ -76,8 +26,8 @@ const Header = () => (
     align="center"
     flex={false}
   >
-    <Heading level={3} margin="none" color="white">
-      <strong>Ampra Login Demo</strong>
+    <Heading level={3} margin="none">
+      <strong>Welcome to AmpraDemo</strong>
     </Heading>
   </Box>
 );
@@ -91,34 +41,68 @@ const Footer = () => (
     border={{ side: "top" }}
     gap="small"
     flex={false}
-  >
-    <Button text = 'Login'/>
-  </Box>
+  ></Box>
 );
+const buttonProps = {
+  // onClick:  () => {
+  //   GetUser(uname, pass);
+  // }
+};
+const Body = ({ history }) => {
+  const [uname, setuName] = useState("");
+  const [pass, setPass] = useState("");
 
-const Body = () => (
-  <Box flex={true} pad="medium" overflow="auto">
-    <Box flex={false}>
-      <Heading level={3} margin="none">
-        <strong>Login</strong>
-      </Heading>
-      <Box pad={{ top: "medium" }} gap="small">
-        <FormField label="Name" htmlFor="name-input">
-          <TextInput id="name-input" placeholder="Enter your name" />
-        </FormField>
+  const onClick = () => {
+    GetUser(uname, pass, history);
+  };
+  return (
+    <Box
+      justify={"center"}
+      align={"center"}
+      flex={true}
+      pad="medium"
+      overflow="auto"
+    >
+      <Box flex={false}>
+        <Heading level={3} margin="none">
+          <strong>Login to Ampra Demo</strong>
+        </Heading>
+        <Box pad={{ top: "medium" }} gap="">
+          <TextBox
+            id="name-input"
+            placeholder="Username"
+            height={35}
+            width={400}
+            stylingMode={"underlined"}
+            onValueChanged={(text) => setuName(text)}
+          />
+
+          <TextBox
+            id="pass-input"
+            placeholder="Password"
+            height={35}
+            width={400}
+            stylingMode={"underlined"}
+            mode={"password"}
+            onValueChanged={(text) => setPass(text)}
+          />
+        </Box>
+        <Box pad={{ top: "medium" }} gap="">
+          <Button text="Login" onClick={onClick} />
+        </Box>
       </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
-const Login = () => (
-  <Grommet theme={myTheme} full={true}>
+const Login = ({ history }) => (
+  <Grommet full={true}>
     <Box fill={true}>
       <Header />
-      <Body />
+      <Body history={history} />
       <Footer />
     </Box>
   </Grommet>
 );
 
-export default Login;
+export default withRouter(Login);

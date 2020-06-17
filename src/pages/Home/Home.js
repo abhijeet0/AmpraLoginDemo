@@ -4,6 +4,8 @@ import styles from './Home.module.css';
 import { Box, Grommet, Heading, FormField } from "grommet";
 import { withRouter } from "react-router-dom";
 import TextBox from "./../../components/DevextremeTextBox";
+import Chart from './../../components/DevextremeChart';
+import DevextremeChart1 from '../../components/DevextremeChart1/DevextremeChart1';
 
 const Header = () => (
   <Box
@@ -55,6 +57,8 @@ const Body = ({ history }) => {
             stylingMode={"filled"}
             readOnly={true}
           />
+          <Chart />
+          <DevextremeChart1 />
         </Box>
       </Box>
     </Box>

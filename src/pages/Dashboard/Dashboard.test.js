@@ -1,7 +1,7 @@
 import React from 'react';
-import TextArea from './TextArea';
+import Dashboard from './Dashboard';
 
-describe('DevextremeTextArea', () => {
+describe('Dashboard', () => {
    it('renders without error', () => {
 
    });

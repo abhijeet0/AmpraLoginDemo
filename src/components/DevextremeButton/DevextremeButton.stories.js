@@ -46,8 +46,8 @@ export const inaccessible = () => (
   />
 );
 
-DevButton.story = {
-  parameters: {
-    info: { inline: true },
-  },
-};
+// DevButton.story = {
+//   parameters: {
+//     info: { inline: true },
+//   },
+// };
